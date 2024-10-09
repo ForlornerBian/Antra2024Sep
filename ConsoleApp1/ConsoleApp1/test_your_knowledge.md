@@ -159,3 +159,65 @@ switch (value)
 10. What interface must an object implement to be enumerated over by using the `foreach` statement?
 
 To be enumerated by `foreach`, an object must implement the **`IEnumerable`** or **`IEnumerable<T>`** interface. These interfaces define a method `GetEnumerator`, which returns an enumerator that supports simple iteration over a collection.
+
+## 02 Arrays and Strings
+### Test your Knowledge
+
+1.When to use `String` vs. `StringBuilder` in C#?
+- **`String`**: Use `String` when you need **immutable** text, meaning that each time you modify the string, a new object is created in memory. This is suitable when you don’t expect many changes to the string value.
+
+- **`StringBuilder`**: Use `StringBuilder` when you need to perform **multiple string manipulations** (concatenations, replacements, etc.) in a performance-efficient way. `StringBuilder` is mutable, so modifications are made to the same object rather than creating new ones each time.
+
+2. What is the base class for all arrays in C#?
+
+The base class for all arrays in C# is **`System.Array`**.
+
+3. How do you sort an array in C#?
+
+To sort an array in C#, you can use the `Array.Sort()` method. For example:
+
+```csharp
+int[] numbers = { 5, 2, 9, 1, 5 };
+Array.Sort(numbers);
+```
+
+This sorts the array in ascending order by default.
+
+4. What property of an array object can be used to get the total number of elements in an array?
+
+The **`Length`** property of an array can be used to get the total number of elements in the array. For example:
+
+```csharp
+int[] numbers = { 1, 2, 3, 4 };
+int totalElements = numbers.Length;  // Returns 4
+```
+
+5. Can you store multiple data types in `System.Array`?
+
+No, **`System.Array`** is a **homogeneous** collection, meaning that all elements in the array must be of the same data type. However, you can use an array of type `object[]` to store different data types, as `object` is the base type for all data types in C#.
+
+Example:
+```csharp
+object[] mixedArray = { 1, "hello", 3.14 };
+```
+
+6. What’s the difference between the `System.Array.CopyTo()` and `System.Array.Clone()`?
+
+- **`Array.CopyTo()`**: Copies the elements of the array to an **existing array** starting at a specified index. It performs a **shallow copy** of the elements.
+
+  Example:
+  ```csharp
+  int[] original = { 1, 2, 3 };
+  int[] copy = new int[3];
+  original.CopyTo(copy, 0);  // Copies elements of original into copy
+  ```
+
+- **`Array.Clone()`**: Creates a **new array** that is a **shallow copy** of the original array. The cloned array is an exact copy but stored in a different location in memory.
+
+  Example:
+  ```csharp
+  int[] original = { 1, 2, 3 };
+  int[] clone = (int[])original.Clone();  // Clones original array into a new array
+  ```
+
+In summary, `CopyTo()` requires an existing array to copy elements into, while `Clone()` creates a new array. Both methods perform shallow copies, meaning if the array contains reference types, only the references are copied.
