@@ -1,4 +1,4 @@
-Here’s a detailed overview of the C# topics you’re asking about:
+# C# Prep
 
 ### 1. **Reference Type vs. Value Type**
    - **Value Type**: Stores data directly, and variables hold actual values. Examples: `int`, `double`, `struct`.

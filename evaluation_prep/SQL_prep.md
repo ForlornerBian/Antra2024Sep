@@ -1,4 +1,4 @@
-Here’s a comprehensive breakdown of the SQL topics you're asking about:
+# SQL prep
 
 ### 1. **What is an Index? Types of Indices; Pros and Cons**
    - **Index**: A database structure that improves the speed of data retrieval at the cost of slower write operations.
